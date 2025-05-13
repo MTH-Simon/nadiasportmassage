@@ -20,6 +20,14 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const scrollToPricing = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById("pricing");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="section-padding bg-white" id="services">
       <div className="container-custom">
@@ -42,7 +50,11 @@ const ServicesSection = () => {
                   {service.description}
                 </CardDescription>
                 <div className="mt-6 text-center">
-                  <a href="#pricing" className="text-wellness-600 hover:text-wellness-800 text-sm font-medium transition-colors underline underline-offset-4">
+                  <a 
+                    href="#pricing" 
+                    className="text-wellness-600 hover:text-wellness-800 text-sm font-medium transition-colors underline underline-offset-4"
+                    onClick={scrollToPricing}
+                  >
                     View Details
                   </a>
                 </div>

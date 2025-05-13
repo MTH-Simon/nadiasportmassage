@@ -25,6 +25,14 @@ const treatments = [
 ];
 
 const TreatmentsSection = () => {
+  const scrollToPricing = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById("pricing");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="section-padding bg-white" id="treatments">
       <div className="container-custom">
@@ -48,7 +56,11 @@ const TreatmentsSection = () => {
               <div className="w-full md:w-1/2">
                 <h3 className="text-xl font-serif mb-3 text-wellness-900">{treatment.title}</h3>
                 <p className="text-wellness-800 mb-4">{treatment.description}</p>
-                <a href="#pricing" className="text-wellness-600 hover:text-wellness-800 text-sm font-medium transition-colors underline underline-offset-4">
+                <a 
+                  href="#pricing" 
+                  className="text-wellness-600 hover:text-wellness-800 text-sm font-medium transition-colors underline underline-offset-4"
+                  onClick={scrollToPricing}
+                >
                   Learn more
                 </a>
               </div>
@@ -57,7 +69,15 @@ const TreatmentsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button className="bg-wellness-600 hover:bg-wellness-700">
+          <Button 
+            className="bg-wellness-600 hover:bg-wellness-700"
+            onClick={() => {
+              const element = document.getElementById("pricing");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             View All Treatments
           </Button>
         </div>

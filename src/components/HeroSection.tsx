@@ -2,8 +2,15 @@
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{ 
@@ -23,10 +30,22 @@ const HeroSection = () => {
           Experience the ultimate in relaxation and healing. Our expert therapists provide personalized treatments to restore your mind, body, and spirit.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-wellness-600 hover:bg-wellness-700 text-white px-8 py-6">
+          <Button 
+            className="bg-wellness-600 hover:bg-wellness-700 text-white px-8 py-6"
+            onClick={scrollToContact}
+          >
             Book Appointment
           </Button>
-          <Button variant="outline" className="border-white text-white hover:bg-white/20 px-8 py-6">
+          <Button 
+            variant="outline" 
+            className="border-white text-white hover:bg-white/20 px-8 py-6"
+            onClick={() => {
+              const element = document.getElementById("services");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             Learn More
           </Button>
         </div>

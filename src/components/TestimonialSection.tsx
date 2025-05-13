@@ -1,7 +1,7 @@
 
 const TestimonialSection = () => {
   return (
-    <section className="section-padding bg-wellness-50">
+    <section id="testimonials" className="section-padding bg-wellness-50">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
