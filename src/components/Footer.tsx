@@ -5,9 +5,9 @@ const Footer = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="font-serif text-xl mb-6">Serenity Spa</h3>
+            <h3 className="font-serif text-xl mb-6">Nadia Sport Massage</h3>
             <p className="text-wellness-100 mb-4">
-              Your sanctuary for relaxation, healing, and wellness in the heart of the city.
+              Professional treatments to help with recovery and relaxation in Sittingbourne.
             </p>
             <div className="flex space-x-4 mt-6">
               <a href="#" className="text-white hover:text-wellness-300">
@@ -30,15 +30,7 @@ const Footer = () => {
             <ul className="space-y-3 text-wellness-100">
               <li className="flex justify-between">
                 <span>Monday - Friday</span>
-                <span>9:00 AM - 8:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Saturday</span>
-                <span>9:00 AM - 6:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sunday</span>
-                <span>10:00 AM - 4:00 PM</span>
+                <span>9:30 AM - 8:30 PM</span>
               </li>
             </ul>
           </div>
@@ -46,17 +38,17 @@ const Footer = () => {
           <div>
             <h3 className="font-serif text-lg mb-6">Contact Info</h3>
             <ul className="space-y-3 text-wellness-100">
-              <li>123 Relaxation Avenue</li>
-              <li>Serenity City, SC 12345</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Email: info@serenityspa.com</li>
+              <li>60 Park Road</li>
+              <li>Sittingbourne, ME10 1DY</li>
+              <li>Phone: 07502 255463</li>
+              <li>Email: nadia@nadiasportmassage.co.uk</li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-serif text-lg mb-6">Newsletter</h3>
             <p className="text-wellness-100 mb-4">
-              Subscribe to receive our special offers and wellness tips.
+              Subscribe to receive special offers and wellness tips.
             </p>
             <form className="mt-4">
               <div className="flex">
@@ -74,7 +66,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-wellness-800 pt-8 text-center text-wellness-300 text-sm">
-          <p>&copy; {new Date().getFullYear()} Serenity Spa. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Nadia Sport Massage. All rights reserved.</p>
           <p className="mt-2">
             <a href="#" className="text-wellness-300 hover:text-white mr-4">Privacy Policy</a>
             <a href="#" className="text-wellness-300 hover:text-white">Terms of Service</a>
