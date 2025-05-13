@@ -1,52 +1,64 @@
 
 const treatments = [
   {
-    name: "Swedish Massage",
-    duration: "60 min",
-    price: "$80",
-    description: "Relaxing massage using long, smooth strokes"
-  },
-  {
-    name: "Deep Tissue",
-    duration: "60 min",
-    price: "$95",
-    description: "Targets deeper layers of muscle and connective tissue"
-  },
-  {
-    name: "Hot Stone Therapy",
-    duration: "75 min",
-    price: "$110",
-    description: "Uses heated stones to ease muscle tension"
-  },
-  {
-    name: "Sports Massage",
-    duration: "60 min",
-    price: "$95",
-    description: "Focuses on areas of the body that are overused during sports"
-  },
-  {
-    name: "Aromatherapy",
-    duration: "60 min",
-    price: "$90",
-    description: "Essential oils enhance massage benefits"
-  },
-  {
-    name: "Thai Massage",
+    name: "Lymphatic Drainage",
     duration: "90 min",
-    price: "$120",
-    description: "Combines acupressure, Indian Ayurvedic principles, and assisted yoga"
+    price: "£150"
   },
   {
-    name: "Reflexology",
+    name: "Head Massage",
+    duration: "30 min",
+    price: "£50"
+  },
+  {
+    name: "Head Massage",
     duration: "45 min",
-    price: "$65",
-    description: "Pressure applied to specific points on the feet"
+    price: "£75"
   },
   {
-    name: "Prenatal Massage",
+    name: "Facial Scar Tissue",
+    duration: "30 min",
+    price: "£50"
+  },
+  {
+    name: "Upper Body (Neck, Shoulders, Back & Scalp)",
     duration: "60 min",
-    price: "$85",
-    description: "Designed for expectant mothers past their first trimester"
+    price: "£100"
+  },
+  {
+    name: "Full Body",
+    duration: "75 min",
+    price: "£125"
+  },
+  {
+    name: "Lower Body (Legs, Hamstrings, Glutei, IT Band, Calves, Achilles, Soles & Quads/hips)",
+    duration: "60 min",
+    price: "£100"
+  },
+  {
+    name: "Lower Body",
+    duration: "75 min",
+    price: "£125"
+  },
+  {
+    name: "Full Body Massage (Strong)",
+    duration: "90 min",
+    price: "£150"
+  },
+  {
+    name: "From Head To Toes",
+    duration: "120 min",
+    price: "£200"
+  },
+  {
+    name: "More Work",
+    duration: "135 min",
+    price: "£225"
+  },
+  {
+    name: "More Work",
+    duration: "150 min",
+    price: "£250"
   },
 ];
 
@@ -57,7 +69,7 @@ const PricingSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif mb-4">Treatment Prices</h2>
           <p className="text-wellness-700 max-w-2xl mx-auto">
-            Our comprehensive range of treatments to nurture your body and mind
+            Professional treatments to help with recovery and relaxation
           </p>
         </div>
         
@@ -70,9 +82,6 @@ const PricingSection = () => {
                 </th>
                 <th scope="col" className="px-6 py-4 text-left text-xs font-medium text-wellness-800 uppercase tracking-wider">
                   Duration
-                </th>
-                <th scope="col" className="px-6 py-4 text-left text-xs font-medium text-wellness-800 uppercase tracking-wider">
-                  Description
                 </th>
                 <th scope="col" className="px-6 py-4 text-right text-xs font-medium text-wellness-800 uppercase tracking-wider">
                   Price
@@ -88,9 +97,6 @@ const PricingSection = () => {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
                     {treatment.duration}
                   </td>
-                  <td className="px-6 py-4 text-sm text-wellness-800 max-w-xs">
-                    {treatment.description}
-                  </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
                     {treatment.price}
                   </td>
@@ -100,9 +106,15 @@ const PricingSection = () => {
           </table>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center space-y-2">
+          <p className="text-wellness-700 text-sm">
+            <span className="font-medium">Gift Vouchers available ·</span> Receipt available
+          </p>
+          <p className="text-wellness-700 text-sm">
+            <span className="font-medium">All treatments include Hot Stones at £5 extra</span>
+          </p>
           <p className="text-wellness-700 text-sm italic">
-            * All prices subject to change. Package deals available upon request.
+            * Please Note: Depending on the injury/problem/workload needed, price may cost more.
           </p>
         </div>
       </div>

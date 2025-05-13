@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { FormEvent, useState } from "react";
+import { Mail, Phone, MapPin, Calendar } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -11,7 +13,7 @@ const ContactSection = () => {
     name: "",
     email: "",
     phone: "",
-    service: "",
+    subject: "",
     message: "",
   });
 
@@ -24,14 +26,14 @@ const ContactSection = () => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     toast({
-      title: "Appointment Request Received",
-      description: "We'll contact you shortly to confirm your booking.",
+      title: "Message Sent",
+      description: "We'll get back to you as soon as possible.",
     });
     setFormData({
       name: "",
       email: "",
       phone: "",
-      service: "",
+      subject: "",
       message: "",
     });
   };
@@ -40,25 +42,27 @@ const ContactSection = () => {
     <section className="section-padding bg-wellness-50" id="contact">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif mb-4">Book your appointment</h2>
+          <h2 className="text-3xl md:text-4xl font-serif mb-4">Find Me & Contact Me</h2>
           <p className="text-wellness-700 max-w-2xl mx-auto">
-            Take the first step toward relaxation and wellness by scheduling your session today
+            Get in touch to book your appointment or ask any questions
           </p>
         </div>
         
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-3xl mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Contact Form */}
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h3 className="text-xl font-serif mb-6">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-wellness-800 mb-1">
-                  Full Name *
+                  Your Name *
                 </label>
                 <Input
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Your name"
+                  placeholder="Your name here"
                   required
                   className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
                 />
@@ -66,7 +70,7 @@ const ContactSection = () => {
               
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-wellness-800 mb-1">
-                  Email Address *
+                  Your Email *
                 </label>
                 <Input
                   id="email"
@@ -82,7 +86,7 @@ const ContactSection = () => {
               
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-wellness-800 mb-1">
-                  Phone Number *
+                  Your Telephone Number *
                 </label>
                 <Input
                   id="phone"
@@ -96,52 +100,107 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label htmlFor="service" className="block text-sm font-medium text-wellness-800 mb-1">
-                  Treatment *
+                <label htmlFor="subject" className="block text-sm font-medium text-wellness-800 mb-1">
+                  Subject *
                 </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
+                <Input
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
                   onChange={handleChange}
+                  placeholder="Subject"
                   required
-                  className="w-full rounded-md border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
+                  className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-wellness-800 mb-1">
+                  Your Message *
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your message"
+                  rows={4}
+                  required
+                  className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
+                />
+              </div>
+              
+              <div className="flex justify-start">
+                <Button 
+                  type="submit" 
+                  className="bg-wellness-600 hover:bg-wellness-700 px-8 py-3"
                 >
-                  <option value="">Select a treatment</option>
-                  <option value="swedish">Swedish Massage</option>
-                  <option value="deep-tissue">Deep Tissue</option>
-                  <option value="hot-stone">Hot Stone</option>
-                  <option value="sports">Sports Massage</option>
-                  <option value="aromatherapy">Aromatherapy</option>
-                  <option value="thai">Thai Massage</option>
-                </select>
+                  Send
+                </Button>
+              </div>
+            </form>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-8">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-serif mb-6">Contact Information</h3>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <MapPin className="h-5 w-5 text-wellness-600 mr-3 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-wellness-900">Address</p>
+                    <p className="text-wellness-700">60 Park Road</p>
+                    <p className="text-wellness-700">Sittingbourne</p>
+                    <p className="text-wellness-700">ME10 1DY</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Phone className="h-5 w-5 text-wellness-600 mr-3 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-wellness-900">Telephone</p>
+                    <p className="text-wellness-700">07502 255463</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Mail className="h-5 w-5 text-wellness-600 mr-3 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-wellness-900">Email</p>
+                    <p className="text-wellness-700">nadia@nadiasportmassage.co.uk</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Calendar className="h-5 w-5 text-wellness-600 mr-3 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-wellness-900">Hours</p>
+                    <p className="text-wellness-700">Monday - Friday: 9:30am - 8:30pm</p>
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-wellness-800 mb-1">
-                Special Requests (Optional)
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell us about any specific concerns or preferences"
-                rows={4}
-                className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
-              />
+
+            {/* Cancellation Policy */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-serif mb-4">Cancellation & No Show Up Policies</h3>
+              <Separator className="mb-4" />
+              <div className="space-y-4 text-wellness-700">
+                <p>• Please give 6 hours Prior to your Appointment for cancellation. Failing to do so will be charged 50% off your treatment Session.</p>
+                <p>• No Show Up will be Charged Full Treatment Session.</p>
+                <p>• Payment will made via Bank Transfer.</p>
+                <p>• To cancel please Call, Message or email.</p>
+              </div>
             </div>
-            
-            <div className="flex justify-center">
-              <Button 
-                type="submit" 
-                className="bg-wellness-600 hover:bg-wellness-700 px-8 py-6"
-              >
-                Book Appointment
-              </Button>
+
+            {/* Google Maps placeholder - In a real implementation, this would be a proper Google Maps integration */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden h-64">
+              <div className="w-full h-full bg-wellness-100 flex items-center justify-center">
+                <p className="text-wellness-700">Google Maps location would display here</p>
+              </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </section>
