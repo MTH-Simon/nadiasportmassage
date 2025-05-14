@@ -21,7 +21,7 @@ const Navbar = () => {
   return <header className="py-4 px-4 sm:px-6 lg:px-8 bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-wellness-100">
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
-          <img id="logo" alt="Nadia Sport Massage Logo" src="/lovable-uploads/358de31a-88ac-4950-8145-e2e2aab444a6.png" className="" />
+          <img/>
         </div>
 
         {/* Desktop Navigation */}
