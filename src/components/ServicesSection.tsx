@@ -52,7 +52,7 @@ const ServicesSection = () => {
                 <div className="mt-6 text-center">
                   <a 
                     href="#pricing" 
-                    className="text-wellness-600 hover:text-wellness-800 text-sm font-medium transition-colors underline underline-offset-4"
+                    className="text-wellness-700 hover:text-wellness-800 text-sm font-medium transition-colors underline underline-offset-4"
                     onClick={scrollToPricing}
                   >
                     View Details

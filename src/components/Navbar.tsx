@@ -75,7 +75,7 @@ const Navbar = () => {
           </a>
           <Button 
             variant="default" 
-            className="bg-wellness-600 hover:bg-wellness-700"
+            className="bg-wellness-700 hover:bg-wellness-800"
             onClick={() => {
               const element = document.getElementById("contact");
               if (element) {
@@ -136,7 +136,7 @@ const Navbar = () => {
             </a>
             <Button 
               variant="default" 
-              className="bg-wellness-600 hover:bg-wellness-700 w-full"
+              className="bg-wellness-700 hover:bg-wellness-800 w-full"
               onClick={() => {
                 const element = document.getElementById("contact");
                 if (element) {

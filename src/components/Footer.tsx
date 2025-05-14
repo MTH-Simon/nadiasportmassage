@@ -57,7 +57,7 @@ const Footer = () => {
                   placeholder="Your email"
                   className="px-4 py-2 w-full rounded-l-md focus:outline-none text-wellness-900"
                 />
-                <button type="submit" className="bg-wellness-600 hover:bg-wellness-700 px-4 py-2 rounded-r-md">
+                <button type="submit" className="bg-wellness-700 hover:bg-wellness-800 px-4 py-2 rounded-r-md">
                   Send
                 </button>
               </div>

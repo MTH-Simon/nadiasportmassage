@@ -64,7 +64,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Your name here"
                   required
-                  className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
+                  className="w-full border-wellness-200 focus:border-wellness-700 focus:ring-wellness-700"
                 />
               </div>
               
@@ -80,7 +80,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Your email"
                   required
-                  className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
+                  className="w-full border-wellness-200 focus:border-wellness-700 focus:ring-wellness-700"
                 />
               </div>
               
@@ -95,7 +95,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Your phone"
                   required
-                  className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
+                  className="w-full border-wellness-200 focus:border-wellness-700 focus:ring-wellness-700"
                 />
               </div>
               
@@ -110,7 +110,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Subject"
                   required
-                  className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
+                  className="w-full border-wellness-200 focus:border-wellness-700 focus:ring-wellness-700"
                 />
               </div>
               
@@ -126,14 +126,14 @@ const ContactSection = () => {
                   placeholder="Your message"
                   rows={4}
                   required
-                  className="w-full border-wellness-200 focus:border-wellness-500 focus:ring-wellness-500"
+                  className="w-full border-wellness-200 focus:border-wellness-700 focus:ring-wellness-700"
                 />
               </div>
               
               <div className="flex justify-start">
                 <Button 
                   type="submit" 
-                  className="bg-wellness-600 hover:bg-wellness-700 px-8 py-3"
+                  className="bg-wellness-700 hover:bg-wellness-800 px-8 py-3"
                 >
                   Send
                 </Button>

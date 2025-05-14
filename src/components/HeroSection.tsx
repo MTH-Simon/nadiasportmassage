@@ -31,7 +31,7 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
-            className="bg-wellness-600 hover:bg-wellness-700 text-white px-8 py-6"
+            className="bg-wellness-700 hover:bg-wellness-800 text-white px-8 py-6"
             onClick={scrollToContact}
           >
             Book Appointment
