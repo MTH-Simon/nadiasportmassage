@@ -1,22 +1,17 @@
-
 import { Button } from "@/components/ui/button";
-
 const HeroSection = () => {
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  return (
-    <section id="hero" className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop')",
-        }}
-      />
+  return <section id="hero" className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: "url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop')"
+    }} />
       <div className="absolute inset-0 bg-black/40" />
       
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
@@ -30,28 +25,21 @@ const HeroSection = () => {
           Experience the ultimate in relaxation and healing. Our expert therapists provide personalized treatments to restore your mind, body, and spirit.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            className="bg-wellness-700 hover:bg-wellness-800 text-white px-8 py-6"
-            onClick={scrollToContact}
-          >
+          <Button className="bg-wellness-700 hover:bg-wellness-800 text-white px-8 py-6" onClick={scrollToContact}>
             Book Appointment
           </Button>
-          <Button 
-            variant="outline" 
-            className="border-white text-white hover:bg-white/20 px-8 py-6"
-            onClick={() => {
-              const element = document.getElementById("services");
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
+          <Button variant="outline" onClick={() => {
+          const element = document.getElementById("services");
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth"
+            });
+          }
+        }} className="border-white text-white hover:bg-white/20 px-8 py-6">
             Learn More
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
