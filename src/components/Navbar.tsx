@@ -27,13 +27,7 @@ const Navbar = () => {
     <header className="py-4 px-4 sm:px-6 lg:px-8 bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-wellness-100">
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
-          <a 
-            href="#hero" 
-            className="font-serif text-xl sm:text-2xl font-medium text-wellness-950"
-            onClick={(e) => handleNavLinkClick(e, "hero")}
-          >
-            Serenity Spa
-          </a>
+<img id="logo" src="https://www.nadiasportmassage.co.uk/wp-content/uploads/2019/02/logo.png" class="">
         </div>
 
         {/* Desktop Navigation */}
