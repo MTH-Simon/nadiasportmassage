@@ -1,11 +1,15 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -18,10 +22,15 @@ const Navbar = () => {
       setIsMenuOpen(false);
     }
   };
+
   return <header className="py-4 px-4 sm:px-6 lg:px-8 bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-wellness-100">
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
-          <img/>
+          <img 
+            src="/placeholder.svg" 
+            alt="Company Logo" 
+            className="h-10 w-auto" 
+          />
         </div>
 
         {/* Desktop Navigation */}
@@ -94,4 +103,5 @@ const Navbar = () => {
         </div>}
     </header>;
 };
+
 export default Navbar;
