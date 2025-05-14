@@ -1,15 +1,11 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -22,61 +18,37 @@ const Navbar = () => {
       setIsMenuOpen(false);
     }
   };
-
-  return (
-    <header className="py-4 px-4 sm:px-6 lg:px-8 bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-wellness-100">
+  return <header className="py-4 px-4 sm:px-6 lg:px-8 bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-wellness-100">
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
-          <img id="logo" src="https://www.nadiasportmassage.co.uk/wp-content/uploads/2019/02/logo.png" className="" alt="Nadia Sport Massage Logo" />
+          <img id="logo" alt="Nadia Sport Massage Logo" src="/lovable-uploads/358de31a-88ac-4950-8145-e2e2aab444a6.png" className="" />
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a 
-            href="#services" 
-            className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors"
-            onClick={(e) => handleNavLinkClick(e, "services")}
-          >
+          <a href="#services" className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors" onClick={e => handleNavLinkClick(e, "services")}>
             Our Services
           </a>
-          <a 
-            href="#treatments" 
-            className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors"
-            onClick={(e) => handleNavLinkClick(e, "treatments")}
-          >
+          <a href="#treatments" className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors" onClick={e => handleNavLinkClick(e, "treatments")}>
             Treatments
           </a>
-          <a 
-            href="#pricing" 
-            className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors"
-            onClick={(e) => handleNavLinkClick(e, "pricing")}
-          >
+          <a href="#pricing" className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors" onClick={e => handleNavLinkClick(e, "pricing")}>
             Pricing
           </a>
-          <a 
-            href="#testimonials" 
-            className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors"
-            onClick={(e) => handleNavLinkClick(e, "testimonials")}
-          >
+          <a href="#testimonials" className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors" onClick={e => handleNavLinkClick(e, "testimonials")}>
             About Us
           </a>
-          <a 
-            href="#contact" 
-            className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors"
-            onClick={(e) => handleNavLinkClick(e, "contact")}
-          >
+          <a href="#contact" className="text-wellness-900 hover:text-wellness-700 text-sm font-medium transition-colors" onClick={e => handleNavLinkClick(e, "contact")}>
             Contact
           </a>
-          <Button 
-            variant="default" 
-            className="bg-wellness-700 hover:bg-wellness-800"
-            onClick={() => {
-              const element = document.getElementById("contact");
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
+          <Button variant="default" className="bg-wellness-700 hover:bg-wellness-800" onClick={() => {
+          const element = document.getElementById("contact");
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth"
+            });
+          }
+        }}>
             Book Now
           </Button>
         </nav>
@@ -90,62 +62,36 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-16 inset-x-0 bg-white shadow-lg z-50">
+      {isMenuOpen && <div className="md:hidden absolute top-16 inset-x-0 bg-white shadow-lg z-50">
           <div className="flex flex-col space-y-4 px-4 py-6">
-            <a 
-              href="#services" 
-              className="text-wellness-900 hover:text-wellness-700 py-2 text-center" 
-              onClick={(e) => handleNavLinkClick(e, "services")}
-            >
+            <a href="#services" className="text-wellness-900 hover:text-wellness-700 py-2 text-center" onClick={e => handleNavLinkClick(e, "services")}>
               Our Services
             </a>
-            <a 
-              href="#treatments" 
-              className="text-wellness-900 hover:text-wellness-700 py-2 text-center" 
-              onClick={(e) => handleNavLinkClick(e, "treatments")}
-            >
+            <a href="#treatments" className="text-wellness-900 hover:text-wellness-700 py-2 text-center" onClick={e => handleNavLinkClick(e, "treatments")}>
               Treatments
             </a>
-            <a 
-              href="#pricing" 
-              className="text-wellness-900 hover:text-wellness-700 py-2 text-center" 
-              onClick={(e) => handleNavLinkClick(e, "pricing")}
-            >
+            <a href="#pricing" className="text-wellness-900 hover:text-wellness-700 py-2 text-center" onClick={e => handleNavLinkClick(e, "pricing")}>
               Pricing
             </a>
-            <a 
-              href="#testimonials" 
-              className="text-wellness-900 hover:text-wellness-700 py-2 text-center" 
-              onClick={(e) => handleNavLinkClick(e, "testimonials")}
-            >
+            <a href="#testimonials" className="text-wellness-900 hover:text-wellness-700 py-2 text-center" onClick={e => handleNavLinkClick(e, "testimonials")}>
               About Us
             </a>
-            <a 
-              href="#contact" 
-              className="text-wellness-900 hover:text-wellness-700 py-2 text-center" 
-              onClick={(e) => handleNavLinkClick(e, "contact")}
-            >
+            <a href="#contact" className="text-wellness-900 hover:text-wellness-700 py-2 text-center" onClick={e => handleNavLinkClick(e, "contact")}>
               Contact
             </a>
-            <Button 
-              variant="default" 
-              className="bg-wellness-700 hover:bg-wellness-800 w-full"
-              onClick={() => {
-                const element = document.getElementById("contact");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                  setIsMenuOpen(false);
-                }
-              }}
-            >
+            <Button variant="default" className="bg-wellness-700 hover:bg-wellness-800 w-full" onClick={() => {
+          const element = document.getElementById("contact");
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth"
+            });
+            setIsMenuOpen(false);
+          }
+        }}>
               Book Now
             </Button>
           </div>
-        </div>
-      )}
-    </header>
-  );
+        </div>}
+    </header>;
 };
-
 export default Navbar;
