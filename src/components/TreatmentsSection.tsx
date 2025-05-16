@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
-const treatments = [
+const initialTreatments = [
   {
     title: "Thai Massage",
     description: "Ancient healing system combining acupressure, Indian Ayurvedic principles, and assisted yoga postures.",
@@ -31,6 +31,57 @@ const treatments = [
   },
 ];
 
+const additionalTreatments = [
+  {
+    title: "Lymphatic Drainage",
+    description: "Gentle massage technique that promotes the movement of lymph fluids around the body.",
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    details: "Lymphatic drainage massage aims to gently and rhythmically move the lymph through the lymphatic system, particularly beneficial after surgery, for lymphedema, or for detoxification.",
+    duration: "90 min",
+    price: "£150"
+  },
+  {
+    title: "Head Massage",
+    description: "Relaxing massage focusing on pressure points on the head to relieve tension.",
+    image: "https://images.unsplash.com/photo-1582680833577-ac9e2c3dea9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    details: "Head massage can provide relief from headaches, eyestrain, and sinus congestion. It may also help reduce stress and improve sleep quality.",
+    duration: "30 min",
+    price: "£50"
+  },
+  {
+    title: "Facial Scar Tissue",
+    description: "Specialized massage technique to improve the appearance of facial scars.",
+    image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    details: "This treatment focuses on reducing the appearance of scars by breaking down scar tissue and promoting healthy skin regeneration.",
+    duration: "30 min",
+    price: "£50"
+  },
+  {
+    title: "Upper Body",
+    description: "Focused massage for neck, shoulders, back, and scalp to relieve tension.",
+    image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    details: "This treatment targets the neck, shoulders, back, and scalp, areas where many people hold tension, particularly those who work at desks.",
+    duration: "60 min",
+    price: "£100"
+  },
+  {
+    title: "Full Body",
+    description: "Complete massage therapy treating the entire body for overall relaxation and wellness.",
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    details: "Full body massage combines various techniques to address the entire body, promoting relaxation and wellness throughout.",
+    duration: "75 min",
+    price: "£125"
+  },
+  {
+    title: "Lower Body",
+    description: "Focused massage for legs, hamstrings, glutei, and more to ease muscle tension.",
+    image: "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    details: "This treatment focuses on the legs, hamstrings, glutei, IT band, calves, Achilles, soles, and quads/hips to relieve tension and improve mobility.",
+    duration: "60 min",
+    price: "£100"
+  },
+];
+
 const TreatmentItem = ({ treatment }) => {
   const [isOpen, setIsOpen] = useState(false);
   
@@ -48,12 +99,22 @@ const TreatmentItem = ({ treatment }) => {
         <p className="text-wellness-800 mb-4">{treatment.description}</p>
         
         <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
-          <CollapsibleTrigger className="flex items-center text-wellness-600 hover:text-wellness-800 font-medium underline-offset-4 text-sm">
+          <CollapsibleTrigger className="flex items-center text-wellness-600 hover:text-wellness-800 font-medium underline-offset-4 text-sm bg-transparent">
             {isOpen ? "Show less" : "Learn more"}
             {isOpen ? <ChevronUp className="h-4 w-4 ml-1" /> : <ChevronDown className="h-4 w-4 ml-1" />}
           </CollapsibleTrigger>
           <CollapsibleContent className="mt-2 text-wellness-800">
             {treatment.details}
+            {treatment.duration && (
+              <div className="mt-2">
+                <span className="font-medium">Duration:</span> {treatment.duration}
+              </div>
+            )}
+            {treatment.price && (
+              <div>
+                <span className="font-medium">Price:</span> {treatment.price}
+              </div>
+            )}
           </CollapsibleContent>
         </Collapsible>
       </div>
@@ -79,153 +140,29 @@ const TreatmentsSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-          {treatments.map((treatment, index) => (
+          {initialTreatments.map((treatment, index) => (
             <TreatmentItem key={index} treatment={treatment} />
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center mb-12">
           <Button 
             variant="outline" 
             className="border-wellness-600 text-wellness-600 hover:bg-wellness-50"
             onClick={toggleAllTreatments}
           >
-            {showAllTreatments ? "Hide All Treatments" : "View All Treatments"} 
+            {showAllTreatments ? "Hide Additional Treatments" : "View All Treatments"} 
             {showAllTreatments ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />}
           </Button>
-          
-          {showAllTreatments && (
-            <div className="mt-8 overflow-x-auto bg-white rounded-lg shadow-md">
-              <table className="min-w-full divide-y divide-wellness-100">
-                <thead className="bg-wellness-100">
-                  <tr>
-                    <th scope="col" className="px-6 py-4 text-left text-xs font-medium text-wellness-800 uppercase tracking-wider">
-                      Treatment
-                    </th>
-                    <th scope="col" className="px-6 py-4 text-left text-xs font-medium text-wellness-800 uppercase tracking-wider">
-                      Duration
-                    </th>
-                    <th scope="col" className="px-6 py-4 text-right text-xs font-medium text-wellness-800 uppercase tracking-wider">
-                      Price
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-wellness-100">
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Lymphatic Drainage
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      90 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £150
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Head Massage
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      30 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £50
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Head Massage
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      45 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £75
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Facial Scar Tissue
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      30 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £50
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Upper Body (Neck, Shoulders, Back & Scalp)
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      60 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £100
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Full Body
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      75 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £125
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Lower Body (Legs, Hamstrings, Glutei, IT Band, Calves, Achilles, Soles & Quads/hips)
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      60 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £100
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Lower Body
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      75 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £125
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      Full Body Massage (Strong)
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      90 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £150
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-wellness-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-wellness-900">
-                      From Head To Toes
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-800">
-                      120 min
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-wellness-900 text-right">
-                      £200
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          )}
         </div>
+        
+        {showAllTreatments && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+            {additionalTreatments.map((treatment, index) => (
+              <TreatmentItem key={`additional-${index}`} treatment={treatment} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
