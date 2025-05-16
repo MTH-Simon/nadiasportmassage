@@ -194,11 +194,19 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Google Maps placeholder - In a real implementation, this would be a proper Google Maps integration */}
+            {/* Google Maps */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden h-64">
-              <div className="w-full h-full bg-wellness-100 flex items-center justify-center">
-                <p className="text-wellness-700">Google Maps location would display here</p>
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2492.497576790751!2d0.72866191580432!3d51.338760379607834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47df2ab663b39c3f%3A0x5ee97c17f4d2bc6a!2s60+Park+Rd%2C+Sittingbourne+ME10+1DY!5e0!3m2!1sen!2suk!4v1550268222994"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps - Nadia Sport Massage"
+                aria-label="Google Maps showing 60 Park Rd, Sittingbourne ME10 1DY"
+              />
             </div>
           </div>
         </div>
