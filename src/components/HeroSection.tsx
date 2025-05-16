@@ -35,7 +35,7 @@ const HeroSection = () => {
               behavior: "smooth"
             });
           }
-        }} className="border-white text-white hover:bg-white/20 px-8 py-6">
+        }} className="border-white text-white px-8 py-6 bg-[tr] bg-transparent">
             Learn More
           </Button>
         </div>
