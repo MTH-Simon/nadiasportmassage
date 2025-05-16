@@ -1,31 +1,41 @@
 
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const services = [
   {
     title: "Deep Tissue",
     description: "Our deep tissue massage targets chronic pain and tension, focusing on the deepest layers of muscle tissue and fascia.",
     icon: "🤲",
+    details: "Deep tissue massage is designed to relieve severe tension in the muscle and the connective tissue or fascia. This type of massage focuses on the muscles located below the surface of the top muscles. It is often recommended for individuals who experience consistent pain and are involved in heavy physical activity.",
+    duration: "60 min",
+    price: "£90"
   },
   {
     title: "Hot Stone",
     description: "Experience ultimate relaxation as smooth, heated stones are placed on key points of the body to melt away tension.",
     icon: "🪨",
+    details: "Hot stone massage therapy melts away tension, eases muscle stiffness, and increases circulation and metabolism. Hot stones expand blood vessels, which encourages blood flow throughout the body. The hot stones have a sedative effect that can relieve chronic pain, reduce stress and promote deep relaxation.",
+    duration: "90 min",
+    price: "£120"
   },
   {
     title: "Swedish",
     description: "Our classic Swedish massage uses long, flowing strokes to improve circulation, ease muscle tension and promote relaxation.",
     icon: "💆",
+    details: "Swedish massage is the most common and best-known type of massage in the West. It involves soft, long, kneading strokes, as well as light, rhythmic tapping strokes, on topmost layers of muscles. This is also combined with movement of the joints. By relieving muscle tension, Swedish therapy can be both relaxing and energizing.",
+    duration: "60 min",
+    price: "£85"
   },
 ];
 
 const ServicesSection = () => {
-  const scrollToPricing = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const element = document.getElementById("pricing");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const [openService, setOpenService] = useState<number | null>(null);
+
+  const toggleService = (index: number) => {
+    setOpenService(openService === index ? null : index);
   };
 
   return (
@@ -49,15 +59,39 @@ const ServicesSection = () => {
                 <CardDescription className="text-center text-wellness-800">
                   {service.description}
                 </CardDescription>
-                <div className="mt-6 text-center">
-                  <a 
-                    href="#pricing" 
-                    className="text-wellness-700 hover:text-wellness-800 text-sm font-medium transition-colors underline underline-offset-4"
-                    onClick={scrollToPricing}
-                  >
-                    View Details
-                  </a>
-                </div>
+                
+                <Collapsible 
+                  open={openService === index}
+                  onOpenChange={() => toggleService(index)}
+                  className="w-full mt-4"
+                >
+                  <CollapsibleTrigger className="w-full">
+                    <div className="flex items-center justify-center text-wellness-600 hover:text-wellness-800 text-sm font-medium transition-colors underline underline-offset-4">
+                      {openService === index ? "Show Less" : "View Details"}
+                      {openService === index ? (
+                        <ChevronUp className="h-4 w-4 ml-1" />
+                      ) : (
+                        <ChevronDown className="h-4 w-4 ml-1" />
+                      )}
+                    </div>
+                  </CollapsibleTrigger>
+                  
+                  <CollapsibleContent className="mt-4">
+                    <div className="text-wellness-800 text-sm">
+                      <p className="mb-4">{service.details}</p>
+                      <div className="mt-4 flex flex-col space-y-1">
+                        <div className="text-wellness-800 text-sm font-medium flex items-center justify-between">
+                          <span>Duration:</span>
+                          <span>{service.duration}</span>
+                        </div>
+                        <div className="text-wellness-800 text-sm font-medium flex items-center justify-between">
+                          <span>Price:</span>
+                          <span className="font-semibold">{service.price}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
               </CardContent>
             </Card>
           ))}

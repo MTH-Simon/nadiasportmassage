@@ -9,25 +9,33 @@ const initialTreatments = [
     title: "Thai Massage",
     description: "Ancient healing system combining acupressure, Indian Ayurvedic principles, and assisted yoga postures.",
     image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    details: "Thai massage is an ancient healing system combining acupressure, Indian Ayurvedic principles, and assisted yoga postures. Traditional Thai massage uses no oils or lotions and the recipient remains clothed during treatment."
+    details: "Thai massage is an ancient healing system combining acupressure, Indian Ayurvedic principles, and assisted yoga postures. Traditional Thai massage uses no oils or lotions and the recipient remains clothed during treatment.",
+    duration: "60 min",
+    price: "£95"
   },
   {
     title: "Sports Massage",
     description: "Targeted therapy to help athletes prepare for and recover from intense physical activity.",
     image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    details: "Sports massage focuses on treating soft tissue aches, pain and injuries associated with physical activity. Designed to prevent and relieve injuries and conditions that are associated with exercise."
+    details: "Sports massage focuses on treating soft tissue aches, pain and injuries associated with physical activity. Designed to prevent and relieve injuries and conditions that are associated with exercise.",
+    duration: "45 min",
+    price: "£85"
   },
   {
     title: "Reflexology",
     description: "Pressure applied to specific points on the feet corresponding to organs and systems throughout the body.",
     image: "https://images.unsplash.com/photo-1554057009-8da6250031a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    details: "Reflexology involves applying pressure to specific points on the feet that correspond to organs and systems throughout the body. This therapy aims to promote relaxation, improve circulation, and encourage healing."
+    details: "Reflexology involves applying pressure to specific points on the feet that correspond to organs and systems throughout the body. This therapy aims to promote relaxation, improve circulation, and encourage healing.",
+    duration: "45 min",
+    price: "£65"
   },
   {
     title: "Aromatherapy",
     description: "Essential oils enhance the benefits of massage while promoting emotional and physical well-being.",
     image: "https://images.unsplash.com/photo-1545620831-7cb0cc28ec80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    details: "Aromatherapy combines the gentle touch of Swedish massage while using essential oils to promote relaxation and balance. These oils are extracted from flowers, bark, stems, leaves, roots or other parts of a plant."
+    details: "Aromatherapy combines the gentle touch of Swedish massage while using essential oils to promote relaxation and balance. These oils are extracted from flowers, bark, stems, leaves, roots or other parts of a plant.",
+    duration: "60 min",
+    price: "£95"
   },
 ];
 
@@ -105,18 +113,19 @@ const TreatmentItem = ({ treatment }) => {
           </CollapsibleTrigger>
           <CollapsibleContent className="mt-2 text-wellness-800">
             {treatment.details}
-            {treatment.duration && (
-              <div className="mt-2">
-                <span className="font-medium">Duration:</span> {treatment.duration}
-              </div>
-            )}
-            {treatment.price && (
-              <div>
-                <span className="font-medium">Price:</span> {treatment.price}
-              </div>
-            )}
           </CollapsibleContent>
         </Collapsible>
+        
+        <div className="mt-4 flex flex-col space-y-1">
+          <div className="text-wellness-800 text-sm font-medium flex items-center justify-between">
+            <span>Duration:</span>
+            <span>{treatment.duration}</span>
+          </div>
+          <div className="text-wellness-800 text-sm font-medium flex items-center justify-between">
+            <span>Price:</span>
+            <span className="font-semibold">{treatment.price}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
