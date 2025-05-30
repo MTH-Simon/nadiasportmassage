@@ -8,7 +8,7 @@ const TestimonialSection = () => {
             <div className="max-w-lg">
               <span className="text-wellness-600 text-4xl font-serif">"</span>
               <p className="text-lg md:text-xl italic text-wellness-900 mb-8">
-                I believe in the transformative power of touch. My mission is to provide a sanctuary where you can disconnect from the stresses of daily life and reconnect with your body's natural ability to heal itself. Every treatment is customized to your unique needs.
+                I believe in the transformative power of touch. My mission is to provide a sanctuary where you can disconnect from the stresses of daily life and reconnect with your body's natural ability to heal itself. Every treatment is personally customized to your unique needs, and I take pride in offering a caring, professional service.
               </p>
               <div className="flex items-center">
                 <div className="ml-4">

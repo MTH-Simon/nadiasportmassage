@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { safeLog } from "@/utils/logger";
 
@@ -37,7 +38,7 @@ const HeroSection = () => {
           PURE RELAXATION - THERAPY - WELL-BEING
         </p>
         <p className="text-white/90 mb-10 max-w-2xl mx-auto">
-          Experience the ultimate in relaxation and healing. Our expert therapists provide personalized treatments to restore your mind, body, and spirit.
+          Experience the ultimate in relaxation and healing. I provide personalized treatments to restore your mind, body, and spirit with professional, caring attention tailored just for you.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button className="bg-wellness-700 hover:bg-wellness-800 text-white px-8 py-6" onClick={scrollToContact}>

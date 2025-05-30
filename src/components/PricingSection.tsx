@@ -72,9 +72,9 @@ const PricingSection = () => {
     <section className="section-padding bg-wellness-50" id="pricing">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif mb-4">Treatment Prices</h2>
+          <h2 className="text-3xl md:text-4xl font-serif mb-4">My Treatment Prices</h2>
           <p className="text-wellness-700 max-w-2xl mx-auto">
-            Professional treatments to help with recovery and relaxation
+            Professional treatments personally delivered to help with your recovery and relaxation
           </p>
         </div>
         
@@ -113,13 +113,13 @@ const PricingSection = () => {
 
         <div className="mt-8 text-center space-y-2">
           <p className="text-wellness-700 text-sm">
-            <span className="font-medium">Gift Vouchers available ·</span> Receipt available
+            <span className="font-medium">Gift Vouchers available ·</span> Receipt provided
           </p>
           <p className="text-wellness-700 text-sm">
             <span className="font-medium">All treatments include Hot Stones at £5 extra</span>
           </p>
           <p className="text-wellness-700 text-sm italic">
-            * Please Note: Depending on the injury/problem/workload needed, price may cost more.
+            * Please Note: Depending on the injury/problem/workload needed, price may vary.
           </p>
         </div>
       </div>

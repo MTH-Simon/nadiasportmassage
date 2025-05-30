@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,7 +26,7 @@ const ContactSection = () => {
     console.log("Form submitted:", formData);
     toast({
       title: "Message Sent",
-      description: "We'll get back to you as soon as possible.",
+      description: "I'll get back to you as soon as possible.",
     });
     setFormData({
       name: "",
@@ -51,7 +50,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Form */}
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-serif mb-6">Send a Message</h3>
+            <h3 className="text-xl font-serif mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-wellness-800 mb-1">
@@ -187,10 +186,10 @@ const ContactSection = () => {
               <h3 className="text-xl font-serif mb-4">Cancellation & No Show Up Policies</h3>
               <Separator className="mb-4" />
               <div className="space-y-4 text-wellness-700">
-                <p>• Please give 6 hours Prior to your Appointment for cancellation. Failing to do so will be charged 50% off your treatment Session.</p>
+                <p>• Please give 6 hours Prior to your Appointment for cancellation. Failing to do so will be charged 50% of your treatment Session.</p>
                 <p>• No Show Up will be Charged Full Treatment Session.</p>
-                <p>• Payment will made via Bank Transfer.</p>
-                <p>• To cancel please Call, Message or email.</p>
+                <p>• Payment will be made via Bank Transfer.</p>
+                <p>• To cancel please Call, Message or email me.</p>
               </div>
             </div>
 
