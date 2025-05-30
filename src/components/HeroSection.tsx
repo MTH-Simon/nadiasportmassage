@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { safeLog } from "@/utils/logger";
+
 const HeroSection = () => {
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -6,9 +8,22 @@ const HeroSection = () => {
       element.scrollIntoView({
         behavior: "smooth"
       });
+      safeLog.info("Scrolled to contact section");
     }
   };
-  return <section id="hero" className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+
+  const scrollToServices = () => {
+    const element = document.getElementById("services");
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
+      safeLog.info("Scrolled to services section");
+    }
+  };
+
+  return (
+    <section id="hero" className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
       backgroundImage: "url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop')"
     }} />
@@ -28,18 +43,13 @@ const HeroSection = () => {
           <Button className="bg-wellness-700 hover:bg-wellness-800 text-white px-8 py-6" onClick={scrollToContact}>
             Book Appointment
           </Button>
-          <Button variant="outline" onClick={() => {
-          const element = document.getElementById("services");
-          if (element) {
-            element.scrollIntoView({
-              behavior: "smooth"
-            });
-          }
-        }} className="border-white text-white px-8 py-6 bg-[tr] bg-transparent">
+          <Button variant="outline" onClick={scrollToServices} className="border-white text-white px-8 py-6 bg-transparent">
             Learn More
           </Button>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
