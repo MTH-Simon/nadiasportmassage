@@ -1,6 +1,11 @@
 
 const treatments = [
   {
+    name: "Sports Massage",
+    duration: "45 min",
+    price: "£75"
+  },
+  {
     name: "Lymphatic Drainage",
     duration: "90 min",
     price: "£150"

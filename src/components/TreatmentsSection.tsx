@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -6,20 +5,12 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 
 const initialTreatments = [
   {
-    title: "Thai Massage",
-    description: "Ancient healing system combining acupressure, Indian Ayurvedic principles, and assisted yoga postures.",
-    image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    details: "Thai massage is an ancient healing system combining acupressure, Indian Ayurvedic principles, and assisted yoga postures. Traditional Thai massage uses no oils or lotions and the recipient remains clothed during treatment.",
-    duration: "60 min",
-    price: "£95"
-  },
-  {
     title: "Sports Massage",
-    description: "Targeted therapy to help athletes prepare for and recover from intense physical activity.",
+    description: "My name is Nadia Martin, I'm a local professional qualified Part Time Sports Massage Therapist. A sports massage isn't just for athletes.",
     image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    details: "Sports massage focuses on treating soft tissue aches, pain and injuries associated with physical activity. Designed to prevent and relieve injuries and conditions that are associated with exercise.",
+    details: "If you play regular sports and exercising frequently, then the answer is yes. If you lead a more sedentary life then the answer is yes too. A Sports Massage will help iron out pains and strains, decrease blood pressure, promote sporting performance and even improve sleep patterns. Whether you're considering a massage to improve post-exercise healing, or would like to relieve the stresses and strains of modern life, I'm here to help. Whilst sports massage is often used to help athletes and active sportspeople to perform at their best, it's also beneficial for those who experience discomfort and tension in their bodies caused by everyday stresses. A sports massage not only relieves tension and anxiety, but it incorporates a deep tissue massage with soft tissue manipulation. This works deep into the muscles to support healthy muscle growth, improve mobility, ease pain and tension and reduce the risk of injury.",
     duration: "45 min",
-    price: "£85"
+    price: "£75"
   },
   {
     title: "Reflexology",
