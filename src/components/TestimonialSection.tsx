@@ -20,7 +20,7 @@ const TestimonialSection = () => {
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              src="/lovable-uploads/f0771a4c-2223-4158-a6ac-cdbf4338ad44.png"
               alt="Nadia Martin, Professional and Expert Therapist"
               className="rounded-lg shadow-lg object-cover w-full max-w-md mx-auto h-[400px]"
             />
