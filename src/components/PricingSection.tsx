@@ -1,9 +1,69 @@
 
 const treatments = [
   {
-    name: "Sports Massage",
+    name: "Sports Massage - Upper Body",
+    duration: "60 min",
+    price: "£100"
+  },
+  {
+    name: "Sports Massage - Upper Body",
+    duration: "75 min",
+    price: "£125"
+  },
+  {
+    name: "Sports Massage - Upper Body",
+    duration: "90 min",
+    price: "£150"
+  },
+  {
+    name: "Sports Massage - Lower Body",
+    duration: "60 min",
+    price: "£100"
+  },
+  {
+    name: "Sports Massage - Lower Body",
+    duration: "75 min",
+    price: "£125"
+  },
+  {
+    name: "Sports Massage - Lower Body",
+    duration: "90 min",
+    price: "£150"
+  },
+  {
+    name: "Sports Massage - Full Body",
+    duration: "120 min",
+    price: "£200"
+  },
+  {
+    name: "Sports Massage - Full Body",
+    duration: "135 min",
+    price: "£250"
+  },
+  {
+    name: "Swedish Massage - Full Body",
+    duration: "90 min",
+    price: "£150"
+  },
+  {
+    name: "Swedish Massage - Full Body",
+    duration: "105 min",
+    price: "£175"
+  },
+  {
+    name: "Reflexology",
     duration: "45 min",
     price: "£75"
+  },
+  {
+    name: "Reflexology",
+    duration: "60 min",
+    price: "£100"
+  },
+  {
+    name: "Plantar Fasciitis Treatment",
+    duration: "60 min",
+    price: "£100"
   },
   {
     name: "Lymphatic Drainage",
@@ -24,47 +84,7 @@ const treatments = [
     name: "Facial Scar Tissue",
     duration: "30 min",
     price: "£50"
-  },
-  {
-    name: "Upper Body (Neck, Shoulders, Back & Scalp)",
-    duration: "60 min",
-    price: "£100"
-  },
-  {
-    name: "Full Body",
-    duration: "75 min",
-    price: "£125"
-  },
-  {
-    name: "Lower Body (Legs, Hamstrings, Glutei, IT Band, Calves, Achilles, Soles & Quads/hips)",
-    duration: "60 min",
-    price: "£100"
-  },
-  {
-    name: "Lower Body",
-    duration: "75 min",
-    price: "£125"
-  },
-  {
-    name: "Full Body Massage (Strong)",
-    duration: "90 min",
-    price: "£150"
-  },
-  {
-    name: "From Head To Toes",
-    duration: "120 min",
-    price: "£200"
-  },
-  {
-    name: "More Work",
-    duration: "135 min",
-    price: "£225"
-  },
-  {
-    name: "More Work",
-    duration: "150 min",
-    price: "£250"
-  },
+  }
 ];
 
 const PricingSection = () => {
@@ -119,7 +139,7 @@ const PricingSection = () => {
             <span className="font-medium">All treatments include Hot Stones at £5 extra</span>
           </p>
           <p className="text-wellness-700 text-sm italic">
-            * Please Note: Depending on the injury/problem/workload needed, price may vary.
+            * Please Note: Sports massage pricing may vary depending on the severity of issues, injuries, or problems being treated.
           </p>
         </div>
       </div>
